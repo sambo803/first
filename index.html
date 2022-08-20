@@ -6,6 +6,13 @@
   <title>Practice Vue.js</title>
   <script src="https://unpkg.com/vue@next"></script>
   <script src="index.js" defer></script>
+
+  <style>
+    .disabled {
+      color: lightgray;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -27,7 +34,7 @@
       <input type="text" v-model="newFruit">
       <button v-on:click="addFruit()">Add fruit</button>
     </p>
-    <p v-if=showInfo>This is an important message</p>
+    <p v-bind:class="{disabled: showInfo}">This is an important message</p>
     <button v-on:click="toggleMessage()">Show/hide Message</button>
   </div>
 
